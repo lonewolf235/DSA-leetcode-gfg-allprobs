@@ -1,2 +1,2 @@
 # DSA-leetcode-gfg-allprobs
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
+Collection of LeetCode and GeeksforGeeks problems which i solved for practising DSA.
