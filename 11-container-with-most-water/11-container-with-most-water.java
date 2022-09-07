@@ -1,16 +1,23 @@
 class Solution {
-    public int maxArea(int[] H) {
-        int ans = 0, i = 0, j = H.length-1, res = 0;
-        while (i < j) {
-            if (H[i] <= H[j]) {
-                res = H[i] * (j - i);
-                i++;
-            } else {
-                res = H[j] * (j - i);
-                j--;
+    public int maxArea(int[] height) {
+        int leftPointer = 0;
+        int rightPointer = height.length - 1;
+        int maxWaterInContainer = 0;
+        while(leftPointer < rightPointer){
+            
+            int waterContained = 0;
+            
+            if(height[leftPointer] < height[rightPointer]){
+                waterContained = height[leftPointer] * (rightPointer - leftPointer);
+                leftPointer++;
+            }else{
+                waterContained = height[rightPointer] * (rightPointer - leftPointer);
+                rightPointer--;
             }
-            if (res > ans) ans = res;
+            
+            maxWaterInContainer = Math.max(maxWaterInContainer, waterContained);
         }
-        return ans;
+        return maxWaterInContainer;
+        
     }
 }
